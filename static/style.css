@@ -1,0 +1,127 @@
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+
+.add-post-form,
+.reply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+input, textarea, button {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: none;
+  overflow-y: hidden;
+  min-height: 80px;
+  height: auto;
+}
+
+textarea:focus {
+  height: auto;
+}
+
+button:hover {
+  background-color: #333;
+  cursor: pointer;
+}
+
+#posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  max-width: 500px;
+  word-wrap: break-word;
+  padding: 10px;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.post-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.post-id {
+  font-size: 0.8em;
+  color: #888;
+  margin-left: 10px;
+  align-self: flex-start;
+}
+
+.post-description {
+  margin-bottom: 5px;
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.post-reply {
+  color: #4caf50;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.replies {
+  margin-top: 20px;
+}
+
+.reply {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.reply-content {
+  font-size: 1em;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.reply_id {
+  font-size: 0.8em;
+  color: #888;
+  margin-left: 10px;
+  align-self: flex-start;
+}
+
+.reply-meta {
+  font-size: 0.8em;
+  color: #888;
+}
+
+a {
+  color: rgb(72, 117, 255);
+}
+
