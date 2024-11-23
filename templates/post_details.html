@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="post">
+        <div class="post-title">
+            {{ post.title }}
+            <span class="post-id">#{{ post_id }}</span>
+        </div>
+        <div class="post-description">{{ post.description | safe }}</div>
+        <div class="post-meta">
+            By: {{ post.author }} | Date: {{ post.date }}
+        </div>
+
+        <h3>Comments</h3>
+        <form method="POST" action="/posts/{{ post_id }}/reply">
+            <textarea name="content" placeholder="Your comment..." required></textarea>
+            <br><br>
+            <input type="text" name="nickname" placeholder="Your nickname (optionally)">
+            <br><br>
+            <button type="submit">Add Comment</button>
+        </form>
+
+        <div class="replies">
+            {% for reply_id, reply in post.replies.items() %}
+            <div class="reply">
+                <div class="reply-content">{{ reply.content | safe }} <span class="reply_id">#{{ reply_id }}</span></div>
+                <div class="reply-meta">
+                    By: {{ reply.nickname }} | Date: {{ reply.date }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
